@@ -23,9 +23,7 @@ if (!isMobile) {
   });
 }
 
-/* ===============================
-   Utilidades de color
-=============================== */
+
 
 function lerp(a, b, t) {
   return a + (b - a) * t;
@@ -47,9 +45,7 @@ function getAccent(section) {
     .map(Number);
 }
 
-/* ===============================
-   Variables base
-=============================== */
+
 
 const container = document.getElementById("scroll-container");
 const sections = document.querySelectorAll(".section");
@@ -58,9 +54,7 @@ const navButtons = document.querySelectorAll("[data-index]");
 let currentIndex = 0;
 let isScrolling = false;
 
-/* ===============================
-   Scroll programático
-=============================== */
+
 
 function scrollToSection(index) {
   if (index < 0 || index >= sections.length) return;
@@ -77,9 +71,7 @@ function scrollToSection(index) {
   }, 800);
 }
 
-/* ===============================
-   Input: mouse y teclado
-=============================== */
+
 
 window.addEventListener("wheel", (event) => {
   if (isScrolling) return;
@@ -103,9 +95,7 @@ window.addEventListener("keydown", (event) => {
   }
 });
 
-/* ===============================
-   Header navigation
-=============================== */
+
 
 navButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -114,9 +104,7 @@ navButtons.forEach((button) => {
   });
 });
 
-/* ===============================
-   Color interpolado + sección activa
-=============================== */
+
 
 function updateActiveSection() {
   const viewportCenter = window.innerHeight / 2;
@@ -138,14 +126,14 @@ function updateActiveSection() {
 
   if (!closestSection) return;
 
-  // Actualizar color global
+
   const accent = getAccent(closestSection);
   document.documentElement.style.setProperty(
     "--accent",
     accent.join(",")
   );
 
-  // Header activo
+
   navButtons.forEach((btn) => btn.classList.remove("nav-active"));
 
   const activeBtn = document.querySelector(
@@ -157,9 +145,7 @@ function updateActiveSection() {
   }
 }
 
-/* ===============================
-   Mezcla progresiva de colores
-=============================== */
+
 
 container.addEventListener("scroll", () => {
   const scrollTop = container.scrollTop;
@@ -185,9 +171,7 @@ container.addEventListener("scroll", () => {
 
   updateActiveSection();
 });
-/* ===============================
-   Reveal animations (FIX)
-=============================== */
+
 
 const reveals = document.querySelectorAll(".reveal");
 
@@ -206,9 +190,7 @@ const revealObserver = new IntersectionObserver(
 );
 
 reveals.forEach((el) => revealObserver.observe(el));
-/* ===============================
-   Hero play button
-=============================== */
+
 
 const playButton = document.getElementById("hero-play");
 
@@ -217,9 +199,7 @@ if (playButton) {
     scrollToSection(1);
   });
 }
-/* ===============================
-   About typing effect
-=============================== */
+
 
 const aboutText = document.getElementById("about-typing");
 
@@ -250,7 +230,7 @@ function startTyping() {
   }, 30);
 }
 
-/* Arranca cuando la sección entra en vista */
+
 const aboutSection = document.getElementById("about");
 
 const aboutObserver = new IntersectionObserver(
@@ -267,9 +247,7 @@ const aboutObserver = new IntersectionObserver(
 if (aboutSection) {
   aboutObserver.observe(aboutSection);
 }
-/* ===============================
-   About → Diploma
-=============================== */
+
 
 const aboutMoreBtn = document.getElementById("about-more");
 
@@ -278,9 +256,7 @@ if (aboutMoreBtn) {
     scrollToSection(3);
   });
 }
-/* ===============================
-   Hero typing effect
-=============================== */
+
 
 const heroText = document.getElementById("hero-typing");
 
@@ -304,7 +280,7 @@ function startHeroTyping() {
   }, 80);
 }
 
-/* Arranca cuando el hero entra en pantalla */
+
 const heroSection = document.getElementById("hero");
 
 const heroObserver = new IntersectionObserver(
@@ -321,9 +297,7 @@ const heroObserver = new IntersectionObserver(
 if (heroSection) {
   heroObserver.observe(heroSection);
 }
-/* ===============================
-   Diploma → Contact
-=============================== */
+
 
 const diplomaContactBtn = document.getElementById("diploma-contact");
 
@@ -332,9 +306,7 @@ if (diplomaContactBtn) {
     scrollToSection(4);
   });
 }
-/* ===============================
-   Contact → Hero
-=============================== */
+
 
 const contactHomeBtn = document.getElementById("contact-home");
 
@@ -347,6 +319,6 @@ const stackNext = document.getElementById("stack-next");
 
 if (stackNext) {
   stackNext.addEventListener("click", () => {
-    scrollToSection(2); // ABOUT ME
+    scrollToSection(2); 
   });
 }

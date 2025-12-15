@@ -1,30 +1,30 @@
 @import "tailwindcss";
 :root {
-  --accent: 139, 92, 246; /* hero default */
+  --accent: 139, 92, 246; 
 }
 
-/* Transiciones globales */
+
 .section[data-theme="hero"] {
-  --accent: 139, 92, 246; /* violeta */
+  --accent: 139, 92, 246; 
 }
 
 .section[data-theme="stack"] {
-  --accent: 59, 130, 246; /* azul */
+  --accent: 59, 130, 246; 
 }
 
 .section[data-theme="about"] {
-  --accent: 34, 197, 94; /* verde */
+  --accent: 34, 197, 94; 
 }
 
 .section[data-theme="diplomas"] {
-  --accent: 234, 179, 8; /* amarillo */
+  --accent: 234, 179, 8; 
 }
 
 .section[data-theme="contact"] {
-  --accent: 236, 72, 153; /* rosa */
+  --accent: 236, 72, 153; 
 }
 
-/* Ocultar scrollbar */
+
 #scroll-container::-webkit-scrollbar {
   display: none;
 }
@@ -32,7 +32,7 @@
 #scroll-container {
   scrollbar-width: none;
 }
-/* Fondo tipo grid animado */
+
 .background-grid {
   position: fixed;
   inset: 0;
@@ -64,7 +64,7 @@ body {
   transition: background-color 0.6s ease;
   font-family: "Pixelify Sans", system-ui, sans-serif;
 }
-/* Glow principal */
+
 
 .background-grid,
 .glow-left,
@@ -72,8 +72,6 @@ body {
   pointer-events: none;
   z-index: -10;
 }
-
-/* ===== GLOWS ULTRA LIVIANOS ===== */
 
 .glow-left,
 .glow-right {
@@ -96,7 +94,7 @@ background: radial-gradient(
   will-change: transform;
 }
 
-/* Glow izquierda arriba */
+
 .glow-left {
   top: -200px;
   left: -200px;
@@ -106,7 +104,7 @@ background: radial-gradient(
 }
 
 
-/* Glow derecha abajo */
+
 .glow-right {
   bottom: -200px;
   right: -200px;
@@ -116,7 +114,7 @@ background: radial-gradient(
 }
 
 
-/* Animaciones MUY lentas (baratísimas) */
+
 @keyframes floatLeft {
   0%   { transform: translate(0, 0); }
   50%  { transform: translate(40px, 30px); }
@@ -135,7 +133,7 @@ background: radial-gradient(
   100% { transform: scale(1); }
 }
 
-/* Transiciones de color globales */
+
 * {
   transition:
     color 0.6s ease,
@@ -146,7 +144,7 @@ background: radial-gradient(
 .glow-right {
   transition: background 0.8s ease;
 }
-/* ===== Animaciones de entrada ===== */
+
 
 .reveal {
   opacity: 0;
@@ -162,12 +160,11 @@ background: radial-gradient(
   transform: translateY(0);
 }
 
-/* Stagger simple */
+
 .reveal-delay-1 { transition-delay: 0.08s; }
 .reveal-delay-2 { transition-delay: 0.16s; }
 .reveal-delay-3 { transition-delay: 0.24s; }
 .reveal-delay-4 { transition-delay: 0.32s; }
-/* ===== Cards pro ===== */
 
 .card {
   background: rgba(15, 18, 30, 0.9);
@@ -199,7 +196,7 @@ background: radial-gradient(
   height: 2px;
   background: rgb(var(--accent));
 }
-/* ===== Header sincronizado ===== */
+
 
 .header {
   color: rgb(var(--accent));
@@ -209,7 +206,7 @@ background: radial-gradient(
 .header button {
   color: inherit;
 }
-/* ===== Botón Play Hero ===== */
+
 
 .play-button {
   width: 130px;
@@ -253,7 +250,7 @@ background: radial-gradient(
   will-change: transform;
 }
 
-/* ===== Stack icon pixel ===== */
+
 
 .stack-icon {
   position: relative;
@@ -270,7 +267,7 @@ background: radial-gradient(
   transition: transform 0.3s ease;
 }
 
-/* Estado A (default) */
+
 .square.back {
   top: 8px;
   left: 8px;
@@ -282,7 +279,7 @@ background: radial-gradient(
   left: 0;
 }
 
-/* Estado B (hover) */
+
 .card:hover .square.back {
   transform: translate(-8px, -8px);
 }
@@ -291,13 +288,13 @@ background: radial-gradient(
   transform: translate(8px, 8px);
 }
 
-/* Nombre */
+
 .stack-name {
   margin-top: 4px;
   font-size: 20px;
   letter-spacing: 0.25em;
 }
-/* ===== Typing text ===== */
+
 
 .typing-text {
   color: rgb(var(--accent));
@@ -310,7 +307,7 @@ background: radial-gradient(
 
   transition: color 0.6s ease;
 }
-/* ===== HUD CSS animation ===== */
+
 
 .hud-animation {
   display: flex;
@@ -327,7 +324,7 @@ background: radial-gradient(
   animation: hudPulse 1.6s ease-in-out infinite;
 }
 
-/* delays para efecto secuencial */
+
 .hud-block:nth-child(2) {
   animation-delay: 0.2s;
 }
@@ -349,7 +346,7 @@ background: radial-gradient(
     transform: translateY(0);
   }
 }
-/* ===== Cursor typing effect ===== */
+
 
 .hero-name {
   display: inline-flex;
@@ -366,15 +363,15 @@ background: radial-gradient(
   50%  { opacity: 0; }
   100% { opacity: 1; }
 }
-/* ===== Disable text selection ===== */
+
 
 * {
-  -webkit-user-select: none; /* Chrome, Safari */
-  -moz-user-select: none;    /* Firefox */
-  -ms-user-select: none;     /* Edge */
+  -webkit-user-select: none; 
+  -moz-user-select: none;    
+  -ms-user-select: none;     
   user-select: none;
 }
-/* ===== Card button ===== */
+
 
 .card-button {
   margin-top: 28px;
@@ -399,7 +396,6 @@ background: radial-gradient(
   transform: scale(1.08);
   box-shadow: 6px 6px 0 rgb(var(--accent));
 }
-/* ===== Diploma item ===== */
 
 .diploma-item {
   display: flex;
@@ -409,7 +405,7 @@ background: radial-gradient(
 
 
 
-/* ===== Diploma CSS animation ===== */
+
 
 .diploma-animation {
   margin-top: 64px;
@@ -438,7 +434,7 @@ background: radial-gradient(
   animation: diplomaScan 2s ease-in-out infinite;
 }
 
-/* Animaciones */
+
 @keyframes diplomaFloat {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-8px); }
@@ -450,7 +446,7 @@ background: radial-gradient(
   50%  { width: 50px; opacity: 1; }
   100% { width: 20px; opacity: 0.3; }
 }
-/* ===== Diploma header layout ===== */
+
 
 .diploma-header {
   display: flex;
@@ -460,7 +456,7 @@ background: radial-gradient(
   margin-bottom: 64px;
 }
 
-/* ===== Diploma animation ===== */
+
 
 .diploma-anim {
   display: flex;
@@ -477,14 +473,14 @@ background: radial-gradient(
   animation: diplomaFloat 4s ease-in-out infinite;
 }
 
-/* Top header of diploma */
+
 .diploma-top {
   height: 20px;
   background: rgba(var(--accent), 0.15);
   border-bottom: 2px solid rgb(var(--accent));
 }
 
-/* Lines */
+
 .diploma-line {
   display: block;
   height: 4px;
@@ -498,7 +494,7 @@ background: radial-gradient(
   width: 40px;
 }
 
-/* Seal */
+
 .diploma-seal {
   position: absolute;
   bottom: 16px;
@@ -509,7 +505,7 @@ background: radial-gradient(
   animation: sealPulse 2.5s ease-in-out infinite;
 }
 
-/* Animations */
+
 @keyframes diplomaFloat {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-10px); }
@@ -528,20 +524,20 @@ background: radial-gradient(
 .card:hover {
   text-decoration: none;
 }
-/* ===== Contact card colors ===== */
+
 
 .card-linkedin {
-  --accent: 236, 72, 153; /* azul */
+  --accent: 236, 72, 153; 
 }
 
 .card-github {
-  --accent: 236, 72, 153; /* gris */
+  --accent: 236, 72, 153; 
 }
 
 .card-whatsapp {
-  --accent: 236, 72, 153; /* verde */
+  --accent: 236, 72, 153; 
 }
-/* ===== Home icon ===== */
+
 
 .home-icon {
   position: relative;
@@ -568,7 +564,6 @@ background: radial-gradient(
   border-right: 10px solid transparent;
   border-bottom: 8px solid rgb(var(--accent));
 }
-/* ===== Checkpoint Signal ===== */
 
 .checkpoint-signal {
   display: flex;
@@ -590,7 +585,7 @@ background: radial-gradient(
   animation: float 5s ease-in-out infinite;
 }
 
-/* Scan line */
+
 .scan-line {
   position: absolute;
   left: 0;
@@ -601,7 +596,7 @@ background: radial-gradient(
   animation: scan 2.8s linear infinite;
 }
 
-/* Pixels */
+
 .pixel {
   position: absolute;
   width: 6px;
@@ -616,7 +611,7 @@ background: radial-gradient(
 .p3 { top: 30px; right: 28px; animation-delay: 0.8s; }
 .p4 { bottom: 16px; left: 90px; animation-delay: 1.2s; }
 
-/* Animations */
+
 @keyframes scan {
   0%   { top: -4px; opacity: 0; }
   10%  { opacity: 1; }
@@ -649,13 +644,13 @@ background: radial-gradient(
 .subtitle {
  margin-bottom: 50px;
 }
-/* Cards solo informativas */
+
 .card {
   cursor: default;
   pointer-events: auto;
 }
 
-/* Cards clickeables (CONTACT) */
+
 .card-link {
   cursor: pointer;
   pointer-events: auto;
